@@ -26,7 +26,14 @@ fn main() {
        Ok(num) => num,
       
        Err(_) =>{
-    
+         
+        if(guess.trim() == "exit") {
+
+         println!("🦄 Bye!");
+
+         break;
+        }
+
          println!("❌ Not a number! Try with a valid input");
         
          continue;
