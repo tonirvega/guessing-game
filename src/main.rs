@@ -3,12 +3,12 @@ use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
-  println!("Guess the number!");
+  println!("🦊 Guess the number!");
+  
+  println!("-- To finish the game, type \"exit\" and Enter --");
   
   let secret_number = rand::thread_rng().gen_range(1..=100);
 
-  println!("The secret number is: {secret_number}");
-  
   loop {
   
      println!("Please input your guess.");
@@ -18,7 +18,8 @@ fn main() {
      io::stdin()
          .read_line(&mut guess)
          .expect("Failed to read line");
-         println!("You guessed: {guess}");
+   
+     println!("You guessed: {guess}");
    
      // redeclare var and use .parse method to cast var
      let guess: u32 = match guess.trim().parse(){
@@ -27,7 +28,7 @@ fn main() {
       
        Err(_) =>{
          
-        if(guess.trim() == "exit") {
+        if guess.trim() == "exit" {
 
          println!("🦄 Bye!");
 
